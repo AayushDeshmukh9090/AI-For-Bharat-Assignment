@@ -1,0 +1,14 @@
+modal>=1.0
+# everything below is installed inside the Modal images (see modal_app.py)
+torch==2.7.1
+torchaudio==2.7.1
+nemo_toolkit[asr]==2.7.3
+huggingface_hub
+pyarrow
+pandas
+soundfile
+librosa
+jiwer
+matplotlib
+pyyaml
+tabulate

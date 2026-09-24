@@ -1,0 +1,36 @@
+seed: 42
+
+model:
+  repo: bodhan-ai/indic-transcribe-core
+  nemo_file: nemo/indic_transcribe_core.nemo
+  lang: mr          # source_lang == target_lang -> transcription task
+  pnc: "no"         # IndicVoices references carry no punctuation
+
+data:
+  dataset: ai4bharat/IndicVoices (marathi)
+  train_shards: [3, 27, 51]   # 3 of 72 shards, spread out; enough for a ~6k-utt budget
+  n_train: 6000
+  dev_frac: 0.05              # fraction of *speakers* held out for validation loss
+  large_shards: [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69]  # scale-up run
+
+training:                     # conservative: strong pretrained model, small in-domain set
+  lr: 1.0e-5
+  weight_decay: 1.0e-3
+  warmup_steps: 50
+  max_steps: 500              # ~5 passes over 6k utts at ~360 s of audio per batch
+  batch_duration: 360         # lhotse dynamic batching: seconds of audio per batch
+  precision: bf16-mixed
+  val_every_n_steps: 100
+  grad_clip: 1.0
+
+evaluation:
+  batch_size: 32
+  metrics: [wer, cer]
+
+# Each ablation = the training block above + these overrides. A0 (no fine-tune) is always evaluated.
+ablations:
+  A1_full:         {}                                   # main run
+  A2_frozen_enc:   {freeze_encoder: true}               # adapt decoder/LM side only
+  A3_half_data:    {train_manifest: train_half, max_steps: 250}  # same epochs, half the data
+  A4_large:        {train_manifest: train_large, max_steps: 1500, max_minutes: 22, val_every_n_steps: 250}  # 24 shards, time-boxed
+  A5_top2:         {unfreeze_last: 2}                  # only last 2 enc + last 2 dec layers + head trainable
