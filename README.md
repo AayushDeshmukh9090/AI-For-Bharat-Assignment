@@ -2,7 +2,7 @@
 
 End-to-end fine-tuning of **`bodhan-ai/indic-transcribe-core`** (1.2B Canary-style ASR) on **IndicVoices-Marathi**, run entirely on Modal H100s, with a baseline, three ablations, subgroup analysis and a manual error analysis.
 
-> **TL;DR:** The pipeline works end to end: data audit → speaker-disjoint splits → smoke test → baseline → 5 fine-tuning ablations on parallel H100s → evaluation from reloaded checkpoints → error analysis. **No fine-tuned variant beat the base model** (base WER 12.33 / CER 4.24; the best fine-tuned run, A4 with 136 h, is at 12.83 / 4.42). The ablations explain why. Dev *loss* falls 10× in 100 steps while dev *WER* rises, so the model is mostly learning IndicVoices' transcription conventions. The damage lands on short conversational backchannels (हां→हो, अच्छा→ओके), and it shrinks steadily as distinct training data grows (3k → 6k → 69k utterances: 13.38 → 13.11 → 12.83).
+>  The pipeline works end to end: data audit → speaker-disjoint splits → smoke test → baseline → 5 fine-tuning ablations on parallel H100s → evaluation from reloaded checkpoints → error analysis. **No fine-tuned variant beat the base model** (base WER 12.33 / CER 4.24; the best fine-tuned run, A4 with 136 h, is at 12.83 / 4.42). The ablations explain why. Dev *loss* falls 10× in 100 steps while dev *WER* rises, so the model is mostly learning IndicVoices' transcription conventions. The damage lands on short conversational backchannels (हां→हो, अच्छा→ओके), and it shrinks steadily as distinct training data grows (3k → 6k → 69k utterances: 13.38 → 13.11 → 12.83).
 >
 > **Artifacts (checkpoints, full logs, predictions):** see the Google Drive link in the submission email (best checkpoint `A4_large.nemo`, run logs, all predictions)
 
