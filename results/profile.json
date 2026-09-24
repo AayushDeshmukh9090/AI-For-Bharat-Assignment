@@ -1,0 +1,144 @@
+{
+  "raw": {
+    "eval": {
+      "raw_examples": 3679,
+      "valid_examples": 3555,
+      "removed_examples": 124,
+      "removed_by_reason": {
+        "duration_out_of_range": 65,
+        "annotation_tag": 59
+      },
+      "raw_hours": 6.15
+    },
+    "train_pool": {
+      "raw_examples": 12470,
+      "valid_examples": 8259,
+      "removed_examples": 4211,
+      "removed_by_reason": {
+        "speaker_in_eval": 3885,
+        "annotation_tag": 162,
+        "duration_out_of_range": 98,
+        "annotator_flag": 61,
+        "speaking_rate_outlier": 5
+      },
+      "raw_hours": 23.04
+    }
+  },
+  "splits": {
+    "train": {
+      "utterances": 6000,
+      "hours": 10.92,
+      "duration_s": {
+        "median": 5.78,
+        "min": 0.3,
+        "max": 25.7
+      },
+      "speakers": 438,
+      "utts_per_speaker_median": 10.0,
+      "scenario": {
+        "Extempore": 3054,
+        "Conversation": 2351,
+        "Read": 595
+      },
+      "gender": {
+        "Female": 3129,
+        "Male": 2844,
+        "Other": 27
+      },
+      "text": {
+        "words_per_utt_median": 12.0,
+        "chars_per_utt_median": 71.0,
+        "vocab_size": 15806,
+        "total_words": 86887
+      }
+    },
+    "train_half": {
+      "utterances": 3000,
+      "hours": 5.4,
+      "duration_s": {
+        "median": 5.63,
+        "min": 0.3,
+        "max": 25.7
+      },
+      "speakers": 397,
+      "utts_per_speaker_median": 5.0,
+      "scenario": {
+        "Extempore": 1528,
+        "Conversation": 1176,
+        "Read": 296
+      },
+      "gender": {
+        "Female": 1577,
+        "Male": 1411,
+        "Other": 12
+      },
+      "text": {
+        "words_per_utt_median": 12.0,
+        "chars_per_utt_median": 69.0,
+        "vocab_size": 9956,
+        "total_words": 42993
+      }
+    },
+    "dev": {
+      "utterances": 275,
+      "hours": 0.61,
+      "duration_s": {
+        "median": 7.17,
+        "min": 0.35,
+        "max": 23.01
+      },
+      "speakers": 23,
+      "utts_per_speaker_median": 11.0,
+      "scenario": {
+        "Extempore": 207,
+        "Read": 37,
+        "Conversation": 31
+      },
+      "gender": {
+        "Female": 169,
+        "Male": 102,
+        "Other": 4
+      },
+      "text": {
+        "words_per_utt_median": 15.0,
+        "chars_per_utt_median": 91.0,
+        "vocab_size": 1816,
+        "total_words": 4570,
+        "oov_rate_vs_train_%": 13.41
+      }
+    },
+    "eval": {
+      "utterances": 3555,
+      "hours": 6.03,
+      "duration_s": {
+        "median": 5.06,
+        "min": 0.3,
+        "max": 28.91
+      },
+      "speakers": 435,
+      "utts_per_speaker_median": 3.0,
+      "scenario": {
+        "Conversation": 2078,
+        "Extempore": 1273,
+        "Read": 204
+      },
+      "gender": {
+        "Female": 1846,
+        "Male": 1707,
+        "Other": 2
+      },
+      "text": {
+        "words_per_utt_median": 11.0,
+        "chars_per_utt_median": 62.0,
+        "vocab_size": 10079,
+        "total_words": 48003,
+        "oov_rate_vs_train_%": 13.95
+      }
+    }
+  },
+  "speaker_overlap": {
+    "train∩eval": 0,
+    "train∩dev": 0,
+    "dev∩eval": 0
+  }
+}

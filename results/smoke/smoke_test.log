@@ -1,0 +1,14 @@
+[NeMo I 2026-09-24 10:45:06 save_restore_connector:285] Model EncDecMultiTaskModel was successfully restored from /vol/hf/hub/models--bodhan-ai--indic-transcribe-core/snapshots/e083ab7dfeeddcb5c0b4a2d7df53f53e7b0f1537/nemo/indic_transcribe_core.nemo.
+{'config': {'lr': 0.0001, 'weight_decay': 0.001, 'warmup_steps': 1, 'max_steps': 3, 'batch_duration': 60, 'precision': 'bf16-mixed', 'val_every_n_steps': 3, 'grad_clip': 1.0, 'train_manifest': 'smoke_train', 'dev_manifest': 'smoke_dev'}, 'trainable_params': 1221439472, 'total_params': 1221439472, 'runtime_min': 1.8, 'peak_gpu_mem_gb': 23.7, 'gpu': 'NVIDIA H100 80GB HBM3'}
+[NeMo I 2026-09-24 10:47:15 save_restore_connector:285] Model EncDecMultiTaskModel was successfully restored from /vol/hf/hub/models--bodhan-ai--indic-transcribe-core/snapshots/e083ab7dfeeddcb5c0b4a2d7df53f53e7b0f1537/nemo/indic_transcribe_core.nemo.
+[NeMo I 2026-09-24 10:49:03 save_restore_connector:285] Model EncDecMultiTaskModel was successfully restored from /vol/runs/smoke/model.nemo.
+1826 parameter tensors changed after 3 steps
+REF: मला डिजि लॉकरमधील माझा मोबाईल क्रमांक दोन सात चार चार दोन सात आठ सहा आठ नऊवर बदलायचा आहे त्यासाठीची प्रक्रिया काय आहे
+HYP: मला डिजि लॉकरमधील माझा मोबाईल क्रमांक दोन सात चार चार दोन सात आठ सहा आठ नऊवर बदलायचा आहे त्यासाठीची प्रक्रिया काय आहे
+REF: हो हो हो हो बरोबर
+HYP: हो हो हो बरोबर
+REF: मिळून जाणार ना मॅडम आमच्या इकडे सर्व काही मिळतं मॅडम इलेक्ट्रिकल कनेक्शनपासून तो वायर बोर्ड फिटिंग सर्व करून मिळणार तुम्हाला
+HYP: मिळून जाणार ना मॅडम आमच्या इकडे सर्व काही मिळतं मॅडम इलेक्ट्रिकल कनेक्शनपासून तो वायर बोर्ड फिटिंग सर्व करून मिळणार तुम्हाला
+REF: आम्ही घरी वेगळेवेगळे प्रकारचा ज्यूस वगैरे बनवतो रसना वगैरे बनवतो जसं निंबूपानी घरी बनवतात उन्हाच्या वेळेस प्यायला लागतो तो
+HYP: आम्ही घरी वेगळेवेगळे प्रकारचा ज्यूस वगैरे बनवतो रसना वगैरे बनवतो जसं निंबूपानी घरी बनवतात उन्हाच्या वेळेस प्यायला लागतो तो
+SMOKE TEST PASSED

@@ -1,0 +1,20 @@
+{
+  "shards": 24,
+  "raw_examples": 99754,
+  "valid_examples": 69059,
+  "removed_by_reason": {
+    "speaker_in_eval_or_dev": 28603,
+    "annotation_tag": 1288,
+    "duration_out_of_range": 476,
+    "annotator_flag": 306,
+    "speaking_rate_outlier": 22
+  },
+  "hours": 136.13,
+  "speakers": 1077,
+  "duration_median": 6.38,
+  "scenario": {
+    "Extempore": 39733,
+    "Conversation": 22593,
+    "Read": 6733
+  }
+}
